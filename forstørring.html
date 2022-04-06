@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang='no'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title></title>
+    <style>
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="300" height="300" style="border:1px solid #000000"></canvas>
+    <div class="game-object">
+        <button type="button" onClick="clicks++; updateradius();"> Klikk for å forstørre </button>
+        <div id="radius"></div>
+    </div>
+
+
+    <script>
+        let c = document.getElementById("myCanvas");
+        let ctx = c.getContext("2d");
+        let radius = 10;
+        let clicks = 0;
+        radius = clicks;
+
+        function updateradius() {
+                    document.getElementById("radius").innerHTML = clicks;
+                    //console.log(clicks);
+                    radius++;
+                    console.log(radius);
+                    ctx.beginPath();
+                    ctx.arc(100,100,radius,0,2*Math.PI);
+                    ctx.stroke();
+        }
+        
+    </script>
+</body>
+</html>
